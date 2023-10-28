@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .bc {
+    background: linear-gradient(rgba(0, 0, 0, 0.605), rgba(0, 0, 0, 0.6)),
+      url("./assets/BC.jpg") ;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+  }
+}
+
+* {
+  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+[data-theme="light"] .logo {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(127, 20, 20);
+  font-size: 25px;
+}
+[data-theme="black"] .logo {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(9, 103, 141);
+  font-size: 25px;
+}
+[data-theme="black"] .btn {
+  background-color: rgb(130, 130, 130);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+[data-theme="light"] .btn {
+  background-color: rgb(2, 2, 2);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+
+.spinner{
+  z-index: 111;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1f;
+}
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+.active{
+  font-weight: 700;
+}
