@@ -8,11 +8,11 @@ const BlogCard = ({ loading, details }) => {
     <>
       
        
-        <div className="rounded overflow-hidden shadow-lg flex flex-col">
+        <div className=" overflow-hidden shadow-lg flex flex-col rounded-xl">
           <div className="relative">
-            <Link to={`/blogs/${details?._id}`} className="max-h-[200px]">
+            <Link to={`/blogs/${details?._id}`} className="max-h-[200px] rounded-xl">
               <img
-                className=" object-cover max-h-[200px] mx-auto"
+                className=" object-cover h-[200px] mx-auto rounded-xl w-full"
                 src={details?.image?.url}
                 alt="Sunset in the mountains"
               />

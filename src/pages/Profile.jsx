@@ -17,7 +17,7 @@ const Profile = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
-  const { userProfile: profile } = useSelector((state) => state.user);
+  const { userProfile: profile,loading } = useSelector((state) => state.user);
   const { dLoading } = useSelector((state) => state.blog);
   const [Id, setId] = useState(null);
   useEffect(() => {
@@ -30,8 +30,8 @@ const Profile = () => {
       <Meta
         title={
           profile?.profile?.username
-            ? profile?.profile?.username
-            : "" + "'s profile"
+            ? profile?.profile?.username+"s profile"
+            : ""
         }
       />
       {profile.loading ? (
@@ -60,13 +60,17 @@ const Profile = () => {
                   />
                   {userInfo?._id == id && (
                     <div className="absolute bottom-0 right-0  p-1 rounded-full bg-primary cursor-pointer">
-                      <AiFillEdit
+                      {
+                        loading?( <span className="loading loading-spinner loading-md"></span>):(
+                          <AiFillEdit
                         className=" text-green-500"
                         size={30}
                         onClick={() =>
                           document.getElementById("my_modal_5").showModal()
                         }
-                      />
+                        />
+                        )
+                      }
                     </div>
                   )}
                 </div>
@@ -74,10 +78,10 @@ const Profile = () => {
 
               <div className="text-center mt-2">
                 <h2 className="font-semibold">{profile?.profile?.username}</h2>
-                <p className="">
+                <p className="font-semibold">
                   {profile?.profile?.job ? profile?.profile?.job : "Bloger"}
                 </p>
-                <p className="">{profile?.profile?.bio}</p>
+                <p className="px-0 sm:px-5">{profile?.profile?.bio}</p>
               </div>
 
               <div className="p-4 border-t mx-8 mt-2">

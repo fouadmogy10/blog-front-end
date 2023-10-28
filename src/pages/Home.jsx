@@ -24,19 +24,20 @@ const Home = () => {
         <Header />
         <div className="container">
           <Title />
-          <div className=" m-auto w-full grid   grid-cols-1 sm:grid-cols-2   gap-4 py-5">
+          <div className=" m-auto w-full grid   grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3   gap-4 py-5">
             {loading ? (
               <>
-                <BlogCardLoader />
-                <BlogCardLoader />
-                <BlogCardLoader />
-                <BlogCardLoader />
+                {
+                  [1,2,3,4,5,6].map(item=>(
+                   <div key={item}> <BlogCardLoader /></div>
+                  ))
+                }
               </>
             ) : (
               <BlogList
                 success={success}
                 data={
-                  blogs?.slice(0, 4)
+                  blogs?.slice(0, 6)
 
                 }
                 loading={loading}
