@@ -25,6 +25,7 @@ import PrivateRoutesAdmin from "./components/PrivateRoutesAdmin";
 import PrivateRoutes from "./components/PrivateRoutes";
 import ResetPassword from "./pages/ResetPassword";
 import ForgetPassword from "./pages/forgetPassword";
+import PageNotFound from "./pages/PageNotFound";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -47,7 +48,7 @@ function App() {
             <Route path="post/create" element={<PrivateRoutes />}>
               <Route path="/post/create" element={<CreatePost />} />
             </Route>
-            
+            <Route path="*" element={<PageNotFound />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
 
