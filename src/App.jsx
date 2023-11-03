@@ -17,7 +17,7 @@ import Profile from "./pages/Profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Register from "./pages/Register";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "./app/features/category/categoryServices";
 import { useEffect } from "react";
 import "@lottiefiles/lottie-player";
@@ -26,12 +26,31 @@ import PrivateRoutes from "./components/PrivateRoutes";
 import ResetPassword from "./pages/ResetPassword";
 import ForgetPassword from "./pages/forgetPassword";
 import PageNotFound from "./pages/PageNotFound";
+import loader from "./assets/loader.json";
+import { useLottie } from "lottie-react";
+import { getAllPost } from "./app/features/blogs/blogSlice";
+const options = {
+  loop: true,
+  autoplay: true,
+  animationData: loader,
+};
 function App() {
   const dispatch = useDispatch();
+  const { blogs } = useSelector((state) => state.blog);
+  const { View } = useLottie(options);
   useEffect(() => {
+    dispatch(getAllPost());
     dispatch(getAllCategories());
   }, []);
 
+  
+  if (blogs?.length <=0) {
+    return (
+      <div className="min-h-screen min-w-full flex items-center justify-center text-black">
+        {View}
+      </div>
+    );
+  }
   return (
     <>
       <>
@@ -43,12 +62,14 @@ function App() {
 
             <Route path="/register" element={<Register />} />
             <Route path="/forget-password" element={<ForgetPassword />} />
-            <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
+            <Route
+              path="/reset-password/:id/:token"
+              element={<ResetPassword />}
+            />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="post/create" element={<PrivateRoutes />}>
               <Route path="/post/create" element={<CreatePost />} />
             </Route>
-            <Route path="*" element={<PageNotFound />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
 
@@ -59,6 +80,7 @@ function App() {
               <Route path="AllCategory" element={<AllCategories />} />
               <Route path="AllComment" element={<AllComment />} />
             </Route>
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           {window.location.pathname.includes("/admin") == false && <Footer />}
 

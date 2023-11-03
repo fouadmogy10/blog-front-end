@@ -11,8 +11,8 @@ const BlogDetails = () => {
   const {id}=useParams();
   const dispatch =useDispatch(); 
   useEffect(() => {
-    dispatch(getPost(id))
     window.scrollTo(0,0)
+    dispatch(getPost(id))
   }, [id])
   
   return <>

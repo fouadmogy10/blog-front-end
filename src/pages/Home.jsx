@@ -13,9 +13,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const { loading, blogs, success } = useSelector((state) => state.blog);
   useEffect(() => {
-    dispatch(getAllPost());
     dispatch(reset());
-    document.querySelector("body").scrollTo(0, 0);
+    window.scrollTo(0, 0);
+    dispatch(getAllPost());
   }, []);
   return (
     <>
@@ -27,19 +27,17 @@ const Home = () => {
           <div className=" m-auto w-full grid   grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3   gap-4 py-5">
             {loading ? (
               <>
-                {
-                  [1,2,3,4,5,6].map(item=>(
-                   <div key={item}> <BlogCardLoader /></div>
-                  ))
-                }
+                {[1, 2, 3, 4, 5, 6].map((item) => (
+                  <div key={item}>
+                    {" "}
+                    <BlogCardLoader />
+                  </div>
+                ))}
               </>
             ) : (
               <BlogList
                 success={success}
-                data={
-                  blogs?.slice(0, 6)
-
-                }
+                data={blogs?.slice(0, 6)}
                 loading={loading}
                 category={""}
               />

@@ -1,5 +1,4 @@
 import { FaInfoCircle } from "react-icons/fa";
-import { AiOutlineGoogle } from "react-icons/ai";
 import React, { useEffect, useRef, useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -18,6 +17,7 @@ let schema = yup.object().shape({
   username: yup.string().min(4).max(24).required("UserName is Required"),
   confirmP: yup.string().required("Confirm Password is Required"),
 });
+
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const Register = () => {

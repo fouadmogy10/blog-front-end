@@ -42,7 +42,7 @@ const BredCramb = ({ Documents, BlogTitle, href }) => {
               {Documents}
             </Link>
           </li>
-          {BlogTitle && (
+          {BlogTitle !=="undefined" && (
             <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
