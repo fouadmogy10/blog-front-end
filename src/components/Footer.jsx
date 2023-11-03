@@ -12,8 +12,8 @@ const Footer = () => {
           <Link aria-label="blog"  to={"/"} className=" normal-case italic logo text-transparent">
           <span className="text-3xl font-extrabold ">B</span>LOG
         </Link>
-            <p className="text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores ducimus rerum nulla quod illum facere unde quas excepturi, tenetur distinctio vel, in cupiditate atque sit maiores. Quo similique natus veniam sequi cupiditate obcaecati eius asperiores perferendis, illum facere facilis harum iure laborum possimus nam debitis nostrum numquam porro? Laboriosam, accusamus!
+            <p className="">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores ducimus rerum nulla quod illum facere unde quas excepturi, tenetur distinctio vel.
             </p>
           </div>
 
