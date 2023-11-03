@@ -98,7 +98,7 @@ const AllUsers = () => {
                                 "delete"
                               )}
                             </button>
-                            <Link to={`/profile/${item._id}`} target="_blank">
+                            <Link aria-label="blog"  to={`/profile/${item._id}`} target="_blank">
                               <button className="flex flex-nowrap btn btn-ghost btn-sm">
                                 <AiOutlineEye color="#3c91e6" />
                                 View

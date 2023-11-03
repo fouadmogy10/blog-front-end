@@ -90,7 +90,7 @@ const Posts = () => {
                                 "delete"
                               )}
                             </button>
-                            <Link to={`/blogs/${item?._id}`} target="_blank">
+                            <Link aria-label="blog"  to={`/blogs/${item?._id}`} target="_blank">
                               <button className="btn btn-ghost btn-sm">
                                 <AiOutlineEye color="#3c91e6" />
                                 View

@@ -10,7 +10,7 @@ const BlogCard = ({ loading, details }) => {
        
         <div className=" overflow-hidden shadow-lg flex flex-col rounded-xl">
           <div className="relative">
-            <Link to={`/blogs/${details?._id}`} className="max-h-[200px] rounded-xl">
+            <Link aria-label="blog"  to={`/blogs/${details?._id}`} className="max-h-[200px] rounded-xl">
               <img
                 className=" object-cover h-[200px] mx-auto rounded-xl w-full"
                 src={details?.image?.url}
@@ -26,7 +26,7 @@ const BlogCard = ({ loading, details }) => {
           </div>
           <div className="px-6 py-4 mb-auto">
             
-               <Link to={`/blogs/${details?._id}`} className="ont-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">
+               <Link aria-label="blog"  to={`/blogs/${details?._id}`} className="ont-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out  mb-2">
                 
               {details?.title}
                </Link>
@@ -58,7 +58,7 @@ const BlogCard = ({ loading, details }) => {
                   </g>
                 </g>
               </svg> */}
-              <Link to={`/profile/${details?.user?.id}`}>
+              <Link aria-label="blog"  to={`/profile/${details?.user?.id}`}>
                 <span className="ml-1">by : {details?.user?.username}</span>
               </Link>
             </span>

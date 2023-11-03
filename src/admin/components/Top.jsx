@@ -23,7 +23,7 @@ const Top = () => {
                 <CountUp duration={5} delay={1} start={0} end={users?.length} />
               </h3>
               <p>Users</p>
-              <Link className="text-[#3c91e6]" to={"/admin/"}>
+              <Link aria-label="blog"  className="text-[#3c91e6]" to={"/admin/"}>
                 See All Users
               </Link>
             </span>
@@ -35,7 +35,7 @@ const Top = () => {
                 <CountUp duration={5} delay={1} start={0} end={categories?.length} />
               </h3>
               <p>Categories</p>
-              <Link className="text-[#3c91e6]" to={"/admin/AllCategory"}>
+              <Link aria-label="blog"  className="text-[#3c91e6]" to={"/admin/AllCategory"}>
                 See All Categories
               </Link>
             </span>
@@ -47,7 +47,7 @@ const Top = () => {
                 <CountUp duration={5} delay={1} start={0} end={comments?.length} />
               </h3>
               <p>Comment</p>
-              <Link className="text-[#3c91e6]" to={"/admin/AllComment"}>
+              <Link aria-label="blog"  className="text-[#3c91e6]" to={"/admin/AllComment"}>
                 See All Comment
               </Link>
             </span>
@@ -59,7 +59,7 @@ const Top = () => {
                 <CountUp duration={5} delay={1} start={0} end={blogs?.length} />
               </h3>
               <p>Posts</p>
-              <Link className="text-[#3c91e6]" to={"/admin/All-posts"}>
+              <Link aria-label="blog"  className="text-[#3c91e6]" to={"/admin/All-posts"}>
                 See All Posts
               </Link>
             </span>

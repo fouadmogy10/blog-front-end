@@ -94,7 +94,7 @@ const Login = () => {
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Password
               </label>
-              <Link to="/forget-password" className="text-xs text-gray-500">
+              <Link aria-label="blog"  to="/forget-password" className="text-xs text-gray-500">
                 Forget Password?
               </Link>
             </div>
@@ -118,7 +118,7 @@ const Login = () => {
           </div>
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
-            <Link to="/register" className="text-xs text-gray-500 uppercase">
+            <Link aria-label="blog"  to="/register" className="text-xs text-gray-500 uppercase">
               or sign up
             </Link>
             <span className="border-b w-1/5 md:w-1/4"></span>

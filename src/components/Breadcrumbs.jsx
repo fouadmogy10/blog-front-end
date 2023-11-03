@@ -7,7 +7,7 @@ const BredCramb = ({ Documents, BlogTitle, href }) => {
       <div className="text-sm breadcrumbs overflow-hidden">
         <ul className=" flex-wrap items-center justify-center"> 
           <li>
-            <Link to={"/"}>
+            <Link aria-label="blog"  to={"/"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -25,7 +25,7 @@ const BredCramb = ({ Documents, BlogTitle, href }) => {
             </Link>
           </li>
           <li>
-            <Link to={`${href}`}>
+            <Link aria-label="blog"  to={`${href}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -18,13 +18,13 @@ const Main = ({ title, breadcrumb, children, secondTitle }) => {
           <h1>{title}</h1>
           <ul className="breadcrumb">
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link aria-label="blog"  to="/">Dashboard</Link>
             </li>
             <li>
               <i className="bx bx-chevron-right"></i>
             </li>
             <li>
-              <Link className="active" >
+              <Link aria-label="blog"  className="active" >
                 {breadcrumb}
               </Link>
             </li>

@@ -30,7 +30,6 @@ const Blogs = () => {
       setData(blogs.filter((item) => item.category == cat));
     }
   }, [cat]);
-  console.log(Data);
   return (
     <div>
       <Meta title={"All Posts"} />

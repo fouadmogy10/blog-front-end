@@ -36,7 +36,7 @@ const ForgetPassword = () => {
           <form className="w-[90%]" onSubmit={formik.handleSubmit}>
             <div className="mt-4 flex items-center justify-between">
               <span className="border-b w-1/5 lg:w-1/4"></span>
-              <Link
+              <Link aria-label="blog" 
                 to="/login"
                 className="text-xs text-center text-gray-500 uppercase"
               >

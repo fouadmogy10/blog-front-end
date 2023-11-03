@@ -108,7 +108,7 @@ const Details = ({ post, id }) => {
 
               <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
                 <div className="p-4 border-t border-b md:border md:rounded">
-                  <Link to={`/profile/${post?.user?.id}`}>
+                  <Link aria-label="blog"  to={`/profile/${post?.user?.id}`}>
                     <div className="flex py-2">
                       <img
                         src={post?.user?.profilePhoto?.url}

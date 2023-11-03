@@ -161,7 +161,7 @@ const Profile = () => {
                                     </button>
                                   </>
                                 )}
-                                <Link to={`/blogs/${item._id}`}>
+                                <Link aria-label="blog"  to={`/blogs/${item._id}`}>
                                   <button className=" py-3 px-7 bg-black rounded btn-sm flex items-center text-white gap-2 uppercase btn-ghost transition-all duration-700">
                                     <AiOutlineEye color="#3c91e6" />
                                     View

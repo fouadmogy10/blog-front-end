@@ -18,19 +18,19 @@ const Main = ({title,breadcrumb}) => {
           <h1>{title}</h1>
           <ul className="breadcrumb">
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link aria-label="blog"  to="/">Dashboard</Link>
             </li>
             <li>
               <i className="bx bx-chevron-right"></i>
             </li>
             <li>
-              <Link className="active" to="!#">
+              <Link aria-label="blog"  className="active" to="!#">
                 {breadcrumb}
               </Link>
             </li>
           </ul>
         </div>
-        <Link to="!#" className="btn-download">
+        <Link aria-label="blog"  to="!#" className="btn-download">
           <AiOutlineCloudDownload />
           <span className="text">Download PDF</span>
         </Link>

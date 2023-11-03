@@ -242,7 +242,7 @@ const Register = () => {
           </div>
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 md:w-1/4"></span>
-            <Link to="/login" className="text-xs text-gray-500 uppercase">
+            <Link aria-label="blog"  to="/login" className="text-xs text-gray-500 uppercase">
               or Login
             </Link>
             <span className="border-b w-1/5 md:w-1/4"></span>

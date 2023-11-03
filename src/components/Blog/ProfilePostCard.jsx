@@ -5,7 +5,7 @@ const ProfilePostCard = ({post,username}) => {
   return (
     <div className="max-w-screen-xl mx-auto ">
       <div className="rounded overflow-hidden flex flex-col max-w-xl mx-auto">
-        <Link to="/">
+        <Link aria-label="blog"  to="/">
           <div className=" h-[300px]">
           <img
             className="w-full object-contain max-h-[300px] "

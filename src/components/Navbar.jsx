@@ -42,18 +42,20 @@ const Navbar = () => {
             tabIndex={0}
             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
           >
-            <NavLink to={"/"}>Home</NavLink>
-            <NavLink to={"/blogs"}>Blogs</NavLink>
+            <li><NavLink to={"/"}>Home</NavLink></li>
+          <li><NavLink to={"/blogs"}>Blogs</NavLink></li>
           </ul>
         </div>
-        <Link to={"/"} className=" normal-case italic logo text-transparent">
+        <Link aria-label="blog"  to={"/"} className=" normal-case italic logo text-transparent">
           <span className="text-3xl font-extrabold ">B</span>LOG
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">
         <ul className="menu menu-horizontal px-1 gap-5">
-          <NavLink to={"/"}>Home</NavLink>
-          <NavLink to={"/blogs"}>Blogs</NavLink>
+          <li><NavLink to={"/"}>Home</NavLink></li>
+          <li><NavLink to={"/blogs"}>Blogs</NavLink></li>
+          
+          
         </ul>
       </div>
       <div className="navbar-end">
@@ -82,7 +84,7 @@ const Navbar = () => {
               {token ? (
                 <>
                   <li>
-                    <Link
+                    <Link aria-label="blog" 
                       to={`/profile/${user._id}`}
                       className="justify-between"
                     >
@@ -98,7 +100,7 @@ const Navbar = () => {
                   )}
 
                   <li>
-                    <Link to={"/post/create"}>Create Post</Link>
+                    <Link aria-label="blog"  to={"/post/create"}>Create Post</Link>
                   </li>
                   <li
                     onClick={async () => {
@@ -112,7 +114,7 @@ const Navbar = () => {
                       setloading(false);
                     }}
                   >
-                    <Link aria-disabled={loading} className="text-center">
+                    <Link aria-label="blog"  aria-disabled={loading} className="text-center">
                       {" "}
                       {loading ? (
                         <span className="loading loading-spinner loading-md"></span>
@@ -125,12 +127,12 @@ const Navbar = () => {
               ) : (
                 <>
                   <li>
-                    <Link to={"/login"} className="justify-between">
+                    <Link aria-label="blog"  to={"/login"} className="justify-between">
                       Login
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/register"} className="justify-between">
+                    <Link aria-label="blog"  to={"/register"} className="justify-between">
                       Register
                     </Link>
                   </li>
@@ -146,7 +148,7 @@ const Navbar = () => {
 
     // <div className={`navbar bg-primary `}>
     //   <div className="flex-1 px-5">
-    //     <Link to={"/"} className=" normal-case italic logo text-transparent">
+    //     <Link aria-label="blog"  to={"/"} className=" normal-case italic logo text-transparent">
     //       <span className="text-3xl font-extrabold ">B</span>LOG
     //     </Link>
     //   </div>
