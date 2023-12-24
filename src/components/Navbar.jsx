@@ -95,7 +95,7 @@ const Navbar = () => {
 
                   {user?.isAdmin && (
                     <li>
-                      <a href={"/admin/"}>Admin Dashboard</a>
+                      <Link to={"/admin/"}>Admin Dashboard</Link>
                     </li>
                   )}
 

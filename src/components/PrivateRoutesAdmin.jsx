@@ -26,7 +26,7 @@ function PrivateRoutesAdmin() {
     return <Outlet />;
   } else {
     Navigate("/");
-    window.location.reload();
+    // window.location.reload();
   }
 }
 
