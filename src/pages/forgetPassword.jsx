@@ -24,7 +24,6 @@ const ForgetPassword = () => {
       dispatch(clearState());
     },
   });
-  console.log(formik.values);
   return (
     <div className="pt-[100px] min-h-screen  ">
       <div className="flex bg-white rounded-lg min-h-[500px] shadow-2xl overflow-hidden mx-auto max-w-sm lg:max-w-4xl">

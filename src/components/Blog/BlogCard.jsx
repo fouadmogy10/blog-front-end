@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import BlogCardLoader from "../Skeleton/BlogCardLoader";
 
 const BlogCard = ({ loading, details }) => {
-  // console.log(loading);
   return (
     <>
       

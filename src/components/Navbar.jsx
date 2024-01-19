@@ -17,7 +17,6 @@ const Navbar = () => {
       document.body.setAttribute("data-theme", "light");
     }
   }, []);
-  console.log(user);
 
   return (
     <div className="navbar bg-primary ">

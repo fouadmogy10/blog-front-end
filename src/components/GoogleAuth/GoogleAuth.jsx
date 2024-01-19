@@ -22,15 +22,12 @@ const GoogleAuth = () => {
     provider.setCustomParameters({ prompt: "select_account" });
     try {
       const resultsFromGoogle = await signInWithPopup(auth, provider);
-      // dispatch(GoofleSignInStart());
+      dispatch(GoofleSignInStart());
       const res = await base_url.post("/auth/google", {
         name: resultsFromGoogle.user.displayName,
         email: resultsFromGoogle.user.email,
         googlePhotoUrl: resultsFromGoogle.user.photoURL,
       });
-      console.log(res,"response");
-
-      
       const data = await res.data;
       localStorage.setItem("user",JSON.stringify(data) );
       localStorage.setItem("userToken", data?.token);
@@ -41,7 +38,6 @@ const GoogleAuth = () => {
       }
     } catch (error) {
       dispatch(GoofleSignInFailure(error));
-      console.log(error);
     }
   };
   return (

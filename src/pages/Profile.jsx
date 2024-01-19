@@ -6,6 +6,7 @@ import {
   deletePostFromProfile,
   userProfile,
 } from "../app/features/user/userSlice";
+
 import { BiTrashAlt } from "react-icons/bi";
 import { deletePost } from "../app/features/blogs/blogSlice";
 import ProfileImgModel from "../components/models/ProfileImgModel";
@@ -24,7 +25,6 @@ const Profile = () => {
     dispatch(userProfile(id));
     window.scrollTo(0, 0);
   }, [id]);
-  console.log(typeof userInfo?.profilePhoto);
   return (
     <>
       <Meta

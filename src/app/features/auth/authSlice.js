@@ -72,7 +72,6 @@ const authSlice = createSlice({
       state.error = null;
     },
     GoofleSignInSuccess: (state, action) => {
-      console.log(action);
       state.userInfo = action.payload;
       state.userToken = action.payload?.token;
       state.Gloading = false;
