@@ -9,27 +9,31 @@ import BlogCardLoader from "../components/Skeleton/BlogCardLoader";
 import Lottie from "../components/Lottie";
 
 const Blogs = () => {
-  const { loading, blogs, success } = useSelector((state) => state.blog);
-  const { categories } = useSelector((state) => state.category);
-  const [cat, setcat] = useState("");
+  const { loading, blogs, success } = useSelector(({ blog }) => blog);
+  const { categories } = useSelector(({ category }) => category);
+  const [cat, setCat] = useState("");
   const [Data, setData] = useState([]);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getAllPost());
     dispatch(reset());
     window.scrollTo(0, 0);
   }, []);
+
   useEffect(() => {
     setData(blogs);
   }, [blogs]);
+
   useEffect(() => {
-    if (cat == "") {
+    if (cat === "") {
       setData(blogs);
     } else {
-      setData(blogs.filter((item) => item.category == cat));
+      setData(blogs.filter((item) => item.category === cat));
     }
   }, [cat]);
+
   return (
     <div>
       <Meta title={"All Posts"} />
@@ -49,7 +53,7 @@ const Blogs = () => {
             <option value={""}>All</option>
             {categories?.map((item) => {
               return (
-                <option key={item._id} value={item?.title}>
+                <option key={item?._id} value={item?.title}>
                   {item?.title}
                 </option>
               );

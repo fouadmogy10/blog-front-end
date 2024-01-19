@@ -67,6 +67,21 @@ const authSlice = createSlice({
       state.userToken = null;
       state.error = null;
     },
+    GoofleSignInStart: (state) => {
+      state.Gloading = true;
+      state.error = null;
+    },
+    GoofleSignInSuccess: (state, action) => {
+      console.log(action);
+      state.userInfo = action.payload;
+      state.userToken = action.payload?.token;
+      state.Gloading = false;
+      state.error = null;
+    },
+    GoofleSignInFailure: (state, action) => {
+      state.Gloading = false;
+      state.error = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -109,5 +124,12 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, setUserPhoto, setUsername } = authSlice.actions;
+export const {
+  logout,
+  setUserPhoto,
+  setUsername,
+  GoofleSignInStart,
+  GoofleSignInSuccess,
+  GoofleSignInFailure,
+} = authSlice.actions;
 export default authSlice.reducer;

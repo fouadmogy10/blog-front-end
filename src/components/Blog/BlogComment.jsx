@@ -71,7 +71,7 @@ const BlogComment = ({ comment, userId }) => {
               <div className="flex justify-between items-center ">
                 <div className="flex gap-3 items-center">
                   <img
-                    src={item?.user?.profilePhoto?.url}
+                    src={typeof( item?.user?.profilePhoto)==="string" ?item?.user?.profilePhoto :item?.user?.profilePhoto?.url }
                     className="object-cover w-8 h-8 rounded-full gap-1   border-2 border-emerald-400  shadow-emerald-400"
                   />
                   <h3 className="font-bold">{item?.username}</h3>

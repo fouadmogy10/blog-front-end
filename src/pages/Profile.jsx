@@ -17,20 +17,20 @@ const Profile = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
-  const { userProfile: profile,loading } = useSelector((state) => state.user);
+  const { userProfile: profile, loading } = useSelector((state) => state.user);
   const { dLoading } = useSelector((state) => state.blog);
   const [Id, setId] = useState(null);
   useEffect(() => {
     dispatch(userProfile(id));
     window.scrollTo(0, 0);
   }, [id]);
-
+  console.log(typeof userInfo?.profilePhoto);
   return (
     <>
       <Meta
         title={
           profile?.profile?.username
-            ? profile?.profile?.username+"s profile"
+            ? profile?.profile?.username + "s profile"
             : ""
         }
       />
@@ -53,24 +53,28 @@ const Profile = () => {
                     className="object-cover object-center h-32 w-full rounded-full"
                     src={
                       userInfo?._id == id
-                        ? userInfo?.profilePhoto?.url
+                        ? typeof userInfo?.profilePhoto === "string"
+                          ? userInfo?.profilePhoto
+                          : userInfo?.profilePhoto?.url
+                        : typeof profile?.profile?.profilePhoto === "string"
+                        ? profile?.profile?.profilePhoto
                         : profile?.profile?.profilePhoto?.url
                     }
                     alt="Woman looking front"
                   />
                   {userInfo?._id == id && (
                     <div className="absolute bottom-0 right-0  p-1 rounded-full bg-primary cursor-pointer">
-                      {
-                        loading?( <span className="loading loading-spinner loading-md"></span>):(
-                          <AiFillEdit
-                        className=" text-green-500"
-                        size={30}
-                        onClick={() =>
-                          document.getElementById("my_modal_5").showModal()
-                        }
+                      {loading ? (
+                        <span className="loading loading-spinner loading-md"></span>
+                      ) : (
+                        <AiFillEdit
+                          className=" text-green-500"
+                          size={30}
+                          onClick={() =>
+                            document.getElementById("my_modal_5").showModal()
+                          }
                         />
-                        )
-                      }
+                      )}
                     </div>
                   )}
                 </div>
@@ -161,7 +165,10 @@ const Profile = () => {
                                     </button>
                                   </>
                                 )}
-                                <Link aria-label="blog"  to={`/blogs/${item._id}`}>
+                                <Link
+                                  aria-label="blog"
+                                  to={`/blogs/${item._id}`}
+                                >
                                   <button className=" py-3 px-7 bg-black rounded btn-sm flex items-center text-white gap-2 uppercase btn-ghost transition-all duration-700">
                                     <AiOutlineEye color="#3c91e6" />
                                     View
