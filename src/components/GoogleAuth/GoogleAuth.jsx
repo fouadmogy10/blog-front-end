@@ -31,7 +31,7 @@ const GoogleAuth = () => {
       const data = await res.data;
       localStorage.setItem("user",JSON.stringify(data) );
       localStorage.setItem("userToken", data?.token);
-      console.log(res);
+      console.log(res,"response");
       if (res.statusText === "OK") {
         dispatch(GoofleSignInSuccess(data));
         toast.success("Login Successfully");
